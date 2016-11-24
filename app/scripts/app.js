@@ -31,6 +31,17 @@ angular.module('asmithdigitalApp', ['ui.router', 'ngResource', 'firebase'])
             controller  : 'AboutController'
           }
         }
+      })
+
+      // route for the aboutus page
+      .state('app.create', {
+        url:'create',
+        views: {
+          'content@': {
+            templateUrl : 'views/create.html',
+            controller  : 'CreateController'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

@@ -21,4 +21,20 @@ angular.module('asmithdigitalApp')
 
   }])
 
+  .controller('CreateController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+
+    var ref = firebase.database().ref().child('portfolios');
+    // create a synchronized array
+    $scope.portfolios = $firebaseArray(ref);
+    // add new items to the array
+    // the message is automatically added to our Firebase database!
+    $scope.addPortfolio = function() {
+      $scope.portfolios.$add({
+        name: $scope.newPortfolioName,
+        description: $scope.newPortfolioDescription
+      });
+    };
+
+  }])
+
 ;

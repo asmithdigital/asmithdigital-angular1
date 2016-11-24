@@ -1,0 +1,25 @@
+<div class="container" ng-controller="CreateController">
+
+  <h1>Create</h1>
+
+  <ul>
+    <li ng-repeat="portfolio in portfolios">{{ portfolio.name }}, {{ portfolio.description }}</li>
+  </ul>
+
+  <ul>
+    <li ng-repeat="portfolio in portfolios">
+      <!-- edit a message -->
+      <input ng-model="portfolio.name" ng-change="portfolio.$save(portfolio.name)" />
+      <input ng-model="portfolio.description" ng-change="portfolio.$save(portfolio.description)" />
+      <!-- delete a message -->
+      <button ng-click="portfolio.$remove(message)">Delete Message</button>
+    </li>
+  </ul>
+  <!-- push a new message onto the array -->
+  <form ng-submit="addPortfolio()">
+    <input ng-model="newPortfolioName" />
+    <input ng-model="newPortfolioDescription" />
+    <button type="submit">Add Message</button>
+  </form>
+
+</div>
