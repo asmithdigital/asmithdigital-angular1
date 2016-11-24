@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="sampleApp">
+<html lang="en" ng-app="asmithdigitalApp">
 
 <head>
   <meta charset="utf-8">
@@ -9,62 +9,30 @@
        content must come *after* these tags -->
 
   <title>asmithdigital</title>
-
   <!-- build:css styles/main.css -->
-  <link href="../bower_components/angular-material/angular-material.min.css" rel="stylesheet">
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- endbuild -->
-
 </head>
 
 <body>
 
-
-<div ng-controller="SampleCtrl">
-
-  <!-- anything typed in here is magically saved to our Firebase database! -->
-  <input type="text" ng-model="data.text"/>
-  <!-- all changes from our Firebase database magically appear here! -->
-  <ul>
-    <li ng-repeat="message in messages">{{ message.text }}</li>
-  </ul>
-
-  <p>{{data}}</p>
-
-  <ul>
-    <li ng-repeat="message in messages">
-      <!-- edit a message -->
-      <input ng-model="message.text" ng-change="messages.$save(message)" />
-      <!-- delete a message -->
-      <button ng-click="messages.$remove(message)">Delete Message</button>
-    </li>
-  </ul>
-  <!-- push a new message onto the array -->
-  <form ng-submit="addMessage()">
-    <input ng-model="newMessageText" />
-    <button type="submit">Add Message</button>
-  </form>
-
-</div>
-
-
-<!--<div ui-view="header"></div>-->
-<!--<div ui-view="content"></div>-->
-<!--<div ui-view="footer"></div>-->
+<div ui-view="header"></div>
+<div ui-view="content"></div>
+<div ui-view="footer"></div>
 
 
 <!-- build:js scripts/main.js -->
 <script src="../bower_components/angular/angular.min.js"></script>
 <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-
-<script src="../bower_components/angular-material/angular-material.min.js"></script>
-
 <script src="../bower_components/firebase/firebase.js"></script>
 <script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
-
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers.js"></script>
 <!--<script src="scripts/services.js"></script>-->
+
 <script src="scripts/firebase-init.js"></script>
 
 <!-- endbuild -->

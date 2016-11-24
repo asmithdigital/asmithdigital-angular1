@@ -1,20 +1,28 @@
 'use strict';
 
-angular.module("sampleApp", ["firebase"])
+angular.module('asmithdigitalApp')
 
-  .controller("SampleCtrl", function($scope, $firebaseArray) {
+  // .controller('FireController', function($scope, $firebaseArray) {
+  //
+  //   var ref = firebase.database().ref().child('messages');
+  //   // create a synchronized array
+  //   $scope.messages = $firebaseArray(ref);
+  //   // add new items to the array
+  //   // the message is automatically added to our Firebase database!
+  //   $scope.addMessage = function() {
+  //     $scope.messages.$add({
+  //       text: $scope.newMessageText
+  //     });
+  //   };
+  //
+  // })
 
-    var ref = firebase.database().ref().child("messages");
-    // create a synchronized array
-    $scope.messages = $firebaseArray(ref);
-    // add new items to the array
-    // the message is automatically added to our Firebase database!
-    $scope.addMessage = function() {
-      $scope.messages.$add({
-        text: $scope.newMessageText
-      });
-    };
+  .controller('IndexController', ['$scope', function($scope) {
 
-  })
+  }])
+
+  .controller('AboutController', ['$scope', function($scope) {
+
+  }])
 
 ;
