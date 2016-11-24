@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('asmithdigitalApp', ['ui.router', 'ngResource'])
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
 
     // route for the home page
@@ -34,5 +34,8 @@ angular.module('asmithdigitalApp', ['ui.router', 'ngResource'])
       });
 
     $urlRouterProvider.otherwise('/');
+
+    $locationProvider.html5Mode(true);
+    
   })
 ;
