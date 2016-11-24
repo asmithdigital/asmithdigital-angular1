@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('asmithdigitalApp', ['ui.router', 'ngResource'])
+angular.module('asmithdigitalApp', ['ui.router', 'ngResource', 'firebase'])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
 
@@ -36,6 +36,16 @@ angular.module('asmithdigitalApp', ['ui.router', 'ngResource'])
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
-    
+
+    var config = {
+      apiKey: "AIzaSyB09cIBjkTTj1eY-xBnS-nkKKjfMzNHPbs",
+      authDomain: "asmithdigital-67949.firebaseapp.com",
+      databaseURL: "https://asmithdigital-67949.firebaseio.com",
+      storageBucket: "asmithdigital-67949.appspot.com",
+      messagingSenderId: "641452325318"
+    };
+    firebase.initializeApp(config);
+
+
   })
 ;
