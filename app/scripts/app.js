@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('asmithdigitalApp', ['ui.router', 'ngResource', 'firebase'])
+angular.module('asmithdigitalApp', ['ui.router', 'ngResource', 'firebase', 'ngMaterial'])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
 

@@ -16,13 +16,13 @@
       <!-- edit a message -->
       <input ng-model="message.text" ng-change="messages.$save(message)" />
       <!-- delete a message -->
-      <button ng-click="messages.$remove(message)">Delete Message</button>
+      <md-button class="md-raised md-primary" ng-click="messages.$remove(message)">Delete Message</md-button>
     </li>
   </ul>
   <!-- push a new message onto the array -->
   <form ng-submit="addMessage()">
     <input ng-model="newMessageText" />
-    <button type="submit">Add Message</button>
+    <md-button class="md-raised md-primary" type="submit">Add Message</md-button>
   </form>
 
 </div>
